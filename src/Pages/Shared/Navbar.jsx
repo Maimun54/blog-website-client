@@ -1,11 +1,19 @@
 
 
 
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvide";
 
 
 
 const Navbar = () => {
+  const {user,loginOut}=useContext(AuthContext)
+  const handleLogOut=()=>{
+    loginOut()
+    .then()
+    .catch()
+  }
     const navLinks =<>
          <li><NavLink to="/">Home</NavLink></li>
          
@@ -13,9 +21,20 @@ const Navbar = () => {
          <li><NavLink to="/allBlog">All blogs</NavLink></li>
          <li><NavLink to="/featuredBlogs">Featured Blogs</NavLink></li>
          <li><NavLink to="/wishlist">Wishlist</NavLink></li>
-         <li><NavLink to="/login">Login</NavLink></li>
+         
+        {
+        user?.email?<>
+         <li ><button  onClick={handleLogOut}>Sign Out</button>
+        
+        </li>
+        
+        </>
+        :
+       <li> <Link to='/login'>Login</Link></li>
+        
+            }
     </>
-//   const {user, loginOut}=useContext(AuthContext)
+
   
   // console.log(user)
   // console.log('Picture',user?.photoURL)
