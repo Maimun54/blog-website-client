@@ -17,7 +17,7 @@ const BlogSecton = () => {
          {
             recentBlog.map(recent=><div key={recent._id}>
         <div className="card h-[500px] card-compact  bg-base-100 shadow-xl">
-  <figure><img className="w-full h-[300px]" src={recent.image} alt="Shoes" /></figure>
+  <figure><img className=" h-[400px]" src={recent.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{recent.title}</h2>
     <p className="text-sm" >{recent.description}</p>
