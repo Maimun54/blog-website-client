@@ -5,22 +5,22 @@ const AddBlog = () => {
         e.preventDefault();
         const form =e.target
         const title =form.title.value;
-        const category_name =form.category_name.value;
+        const category =form.category_name.value;
         const image =form.photo.value;
         const date =form.date.value;
-       
+        const long_description =form.Long_description.value;
     
         const description =form.description.value;
         
-        const newProduct={title,category_name,image,description,date}
-        console.log(newProduct)
+        const newBlogs={title,category,image,description,date,long_description}
+        console.log(newBlogs)
         //send data server side
         fetch('http://localhost:5000/allBlog',{
             method:'POST',
             headers:{
                 'Content-type':'application/json'
             },
-            body:JSON.stringify(newProduct)
+            body:JSON.stringify(newBlogs)
         })
         .then(res=>res.json())
         .then(data=>{
@@ -63,16 +63,24 @@ const AddBlog = () => {
   <label className="label">
     <span className="label-text">Image</span>
   </label>
-  <input type="text" name="photo"  required placeholder="Type your Image url" className="input input-bordered"  />
+  <input  type="text" name="photo"  required placeholder="Type your Image url" className="input input-bordered"  />
 </div>
   
 <div className="form-control">
   <label className="label">
-    <span className="label-text">Description</span>
+    <span className="label-text">Short Description</span>
   </label>
   <input type="text" required name="description" placeholder="Type Short Description" className="input input-bordered"  />
   
 </div>
+<div className="form-control">
+  <label className="label">
+    <span className="label-text">Long Description</span>
+  </label>
+  <input type="text" required name="Long_description" placeholder="Type Long Description" className="input input-bordered w-[600px] h-[100px]"  />
+  
+</div>
+
 <div className="form-control">
   <label className="label">
     <span className="label-text">Date</span>

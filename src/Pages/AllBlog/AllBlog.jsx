@@ -1,9 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
+import Blog from "./Blog";
 
 
 const AllBlog = () => {
     const Blogs =useLoaderData()
     console.log(Blogs)
+
+    
     return (
         <div>
             <div className="flex justify-center gap-5">
@@ -13,6 +17,7 @@ const AllBlog = () => {
   </label>
      <select name="category_name" className="select select-bordered w-full input-accent ">
   
+  <option >Select</option>
   <option >Child Develop Parenting</option>
   <option>Child Development</option>
   <option>Health and Safety </option>
@@ -26,6 +31,11 @@ const AllBlog = () => {
      <input name="email"  type="text" placeholder="search here" className="input input-bordered input-accent w-full max-w-xs" />
         <button className="btn btn-primary text-white px-5">Search</button>
      </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10 ">
+                {
+                    Blogs.map(blog=><Blog key={blog._id} blog={blog}></Blog>)
+                }
             </div>
         </div>
     );
