@@ -59,8 +59,8 @@ const Login = () => {
     return (
         <div>
              <div className="text-center">
-                <h2 className="text-4xl font-bold py-3">WELCOME TO OUR ELEMENTALCARS</h2>
-                <h2 className="text-4xl font-bold py-3">LOGIN NOW</h2>
+             <h2 className="text-4xl font-bold py-3">WELCOME TO OUR Child Care</h2>
+             <h2 className="text-4xl font-bold py-3">LOGIN NOW</h2>
                 
             </div>
             

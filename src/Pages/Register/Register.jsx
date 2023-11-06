@@ -85,7 +85,7 @@ const Register = () => {
     return (
         <div>
         <div className="text-center">
-           <h2 className="text-4xl font-bold py-3">WELCOME TO OUR ELEMENTALCARS</h2>
+           <h2 className="text-4xl font-bold py-3">WELCOME TO OUR CHILD CARE</h2>
            <h2 className="text-4xl font-bold py-3">REGISTER NOW</h2>
            
        </div>

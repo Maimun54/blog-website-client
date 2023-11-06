@@ -28,7 +28,7 @@ const Home = () => {
              </div>
          </div>
             </div>
-            <h2>BLog:{recentBlog.length}</h2>
+           
             <Newlatter></Newlatter>
         </div>
     );

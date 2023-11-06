@@ -3,6 +3,10 @@ import Layout from "../MainLayout/Layout";
 import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import AddBlog from "../Pages/AddBlog/AddBlog";
+import AllBlog from "../Pages/AllBlog/AllBlog";
+import FeatureBlog from "../Pages/FeatureBlog/FeatureBlog";
+import WishList from "../Pages/WishList/WishList";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +25,23 @@ const router = createBrowserRouter([
         {
           path:'/login',
           element:<Login></Login>
+        },
+        {
+          path:'/addBlog',
+          element:<AddBlog></AddBlog>
+        },
+        {
+          path:'/allBlog',
+          element:<AllBlog></AllBlog>,
+          loader:()=>fetch('http://localhost:5000/allBlog')
+        },
+        {
+          path:'/featuredBlogs',
+          element:<FeatureBlog></FeatureBlog>
+        },
+        {
+          path:'/wishlist',
+          element:<WishList></WishList>
         }
       ]
     },
