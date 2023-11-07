@@ -9,11 +9,14 @@ import FeatureBlog from "../Pages/FeatureBlog/FeatureBlog";
 import WishList from "../Pages/WishList/WishList";
 import BlogDetails from "../Pages/AllBlog/BlogDetails";
 import PrivateProvider from "../Provider/PrivateProvider";
+import UpdateBlog from "../Pages/UpdateBlog/UpdateBlog";
+import Errorpage from "../Pages/Error/Errorpage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout></Layout>,
+      errorElement:<Errorpage></Errorpage>,
       children:[
         {
             path:'/',
@@ -49,9 +52,11 @@ const router = createBrowserRouter([
         {
           path:'/wishlist',
           element:<PrivateProvider><WishList></WishList></PrivateProvider>,
-          // loader:()=>fetch(`http://localhost:5000/wishlist`)
-          // loader:()=>fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
-
+        },
+        {
+          path:'/updateBlog/:id',
+          element:<PrivateProvider><UpdateBlog></UpdateBlog></PrivateProvider>,
+          loader:({params})=>fetch(`http://localhost:5000/allBlog/${params.id}`)
         }
       ]
     },
