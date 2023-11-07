@@ -3,14 +3,16 @@ import { useContext } from "react";
 
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "./AuthProvide";
-
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
  
 const PrivateProvider = ({children}) => {
-    const {user,loadedData} = useContext(AuthContext)
+    const {user,loader} = useContext(AuthContext)
     const location = useLocation()
     console.log(location)
-     if(loadedData){
-     return <span className="loading loading-spinner loading-lg mx-auto text-center"></span>
+     if(loader){
+    //  return <span className="loading loading-spinner loading-lg mx-auto text-center"></span>
+    return <Skeleton />
      }
     if(user){
         return children
