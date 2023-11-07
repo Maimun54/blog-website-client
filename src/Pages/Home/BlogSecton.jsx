@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
-
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const BlogSecton = () => {
      
@@ -50,10 +51,12 @@ const BlogSecton = () => {
       <Link to={`/blogDetails/${recent._id}`}><button   className="btn btn-primary">Details</button></Link>
       <button  className="btn btn-primary">WishList</button>
     </div>
+    
   </div>
 </div>
             </div>)
          }
+         
          </div>
         </div>
     );

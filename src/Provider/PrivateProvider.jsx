@@ -12,7 +12,7 @@ const PrivateProvider = ({children}) => {
     console.log(location)
      if(loader){
     //  return <span className="loading loading-spinner loading-lg mx-auto text-center"></span>
-    return <Skeleton />
+    return <Skeleton  count={3}/>
      }
     if(user){
         return children

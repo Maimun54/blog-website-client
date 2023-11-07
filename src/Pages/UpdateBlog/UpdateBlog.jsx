@@ -1,9 +1,10 @@
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const UpdateBlog = () => {
     const updateData =useLoaderData();
-    const {title,category,image,description,date,long_description}=updateData
+    const {_id,title,category,image,description,date,long_description}=updateData
     console.log(updateData)
     const handleBlogUpdate =e=>{
         e.preventDefault();
@@ -17,6 +18,20 @@ const UpdateBlog = () => {
         
 const updateBlogs={title,category,image,description,date,long_description}
         console.log(updateBlogs)
+        fetch(`http://localhost:5000/allBlog/${_id}`,{
+            method:'PUT',
+            headers:{
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(updateBlogs)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.modifiedCount>0){
+                swal("Yes!", "You can successfully update our blog post ", "success")
+            }
+        })
     }
     return (
         <div>
