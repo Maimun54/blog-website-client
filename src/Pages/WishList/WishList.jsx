@@ -1,14 +1,25 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link,  } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvide";
+import axios from "axios";
 
 
 const WishList = () => {
-    const blogWishLists =useLoaderData()
-
+    const {user}=useContext(AuthContext)
+    const [wistListBlog,setWishListBlog]=useState([])
+    useEffect(()=>{
+        axios(`http://localhost:5000/wishlist?email=${user?.email}`)
+        .then(res=>{
+            setWishListBlog(res.data)
+        })
+    },[user?.email])
+    // const blogWishLists =useLoaderData()
+   
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10 " >
                 {
-                 blogWishLists.map(wishList=><div key={wishList._id}>
+                 wistListBlog.map(wishList=><div key={wishList._id}>
                 <div className="card h-[500px] card-compact  bg-base-100 shadow-xl">
                  <figure><img className=" h-[400px]" src={wishList.image} alt="Shoes" /></figure>
                 <div className="card-body">

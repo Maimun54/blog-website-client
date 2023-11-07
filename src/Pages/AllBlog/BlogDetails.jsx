@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 const BlogDetails = () => {
    const blogDetails =useLoaderData()
-   const {title,category,image,description,date,long_description}=blogDetails
+   const {title,image,description,date,long_description}=blogDetails
    console.log(blogDetails)
     return (
         <div>

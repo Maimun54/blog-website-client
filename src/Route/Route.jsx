@@ -8,6 +8,7 @@ import AllBlog from "../Pages/AllBlog/AllBlog";
 import FeatureBlog from "../Pages/FeatureBlog/FeatureBlog";
 import WishList from "../Pages/WishList/WishList";
 import BlogDetails from "../Pages/AllBlog/BlogDetails";
+import PrivateProvider from "../Provider/PrivateProvider";
 
 const router = createBrowserRouter([
     {
@@ -29,12 +30,12 @@ const router = createBrowserRouter([
         },
         {
           path:'/addBlog',
-          element:<AddBlog></AddBlog>
+          element:<PrivateProvider><AddBlog></AddBlog></PrivateProvider>
         },
         {
           path:'/allBlog',
           element:<AllBlog></AllBlog>,
-          loader:()=>fetch('http://localhost:5000/allBlog')
+          loader:({params})=>fetch(`http://localhost:5000/allBlog?category?${params.category}`)
         },
         {
           path:'/blogDetails/:id',
@@ -47,8 +48,9 @@ const router = createBrowserRouter([
         },
         {
           path:'/wishlist',
-          element:<WishList></WishList>,
-          loader:()=>fetch('http://localhost:5000/wishlist')
+          element:<PrivateProvider><WishList></WishList></PrivateProvider>,
+          // loader:()=>fetch(`http://localhost:5000/wishlist`)
+          // loader:()=>fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
 
         }
       ]

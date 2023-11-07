@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvide";
 
 
 const AddBlog = () => {
+    const {user}=useContext(AuthContext)
+    // const email =user?email
     const handleAddBlog=e=>{
         e.preventDefault();
         const form =e.target
+        // const email=user?.email;
         const title =form.title.value;
         const category =form.category_name.value;
         const image =form.photo.value;
@@ -12,7 +17,7 @@ const AddBlog = () => {
     
         const description =form.description.value;
         
-        const newBlogs={title,category,image,description,date,long_description}
+const newBlogs={title,category,image,description,date,long_description}
         console.log(newBlogs)
         //send data server side
         fetch('http://localhost:5000/allBlog',{
@@ -49,16 +54,21 @@ const AddBlog = () => {
   </label>
   <select name="category_name" className="select select-bordered w-full ">
   {/* <option disabled selected>Brand Name</option> */}
-  <option>Child Develop Parenting</option>
-  <option>Child Development</option>
-  <option>Health and Safety </option>
-  <option>Education and Learning</option>
-  <option>Healing and Growth</option>
-  <option>Parenting Myths</option>
+  <option>Child_Develop_Parenting</option>
+  <option>Child_Development</option>
+  <option>Health_Safety </option>
+  <option>Education_Learning</option>
+  <option>Healing_Growth</option>
+  <option>Parenting_Myths</option>
   
 </select>
 </div>
- 
+{/* <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input type="email" name='email' placeholder="email" defaultValue={user?.email} className="input input-bordered" required />
+            </div> */}
   <div className="form-control ">
   <label className="label">
     <span className="label-text">Image</span>
