@@ -17,7 +17,7 @@ const Blog = ({blog}) => {
   // const wishList ={blog,email}
   console.log(email)
     const handleWishList =()=>{
-      const wishListObj ={email,title,category,image,description,date,long_description}
+      const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
       // const email =user?.email
         fetch('http://localhost:5000/wishlist',{
         method:'POST',

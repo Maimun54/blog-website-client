@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { AuthContext } from "../../Provider/AuthProvide";
 
 const BlogSecton = () => {
-     
+  const {user}=useContext(AuthContext)
+  const email=user?.email;
     const [recentBlog,setRecentBlog]=useState([])
   
       console.log(recentBlog)
@@ -19,22 +21,28 @@ const BlogSecton = () => {
           setRecentBlog(res.data)
         })
     },[])
-  //   const handleWishList =()=>{
-  //     fetch('http://localhost:5000/wishlist',{
-  //     method:'POST',
-  //     headers:{
-  //         'Content-type':'application/json'
-  //     },
-  //     body:JSON.stringify(recent)
-  // })
-  // .then(res=>res.json())
-  // .then(data=>{
-  //     console.log(data)
-  //     if(data.insertedId){
-  //       swal("Blog added your WishList");
-  //   }
-  // })
-  // }
+    
+    const {title,_id,category,image,description,date,long_description}=recentBlog
+    
+    console.log(email)
+      const handleWishList =()=>{
+        const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
+        // const email =user?.email
+          fetch('http://localhost:5000/wishlist',{
+          method:'POST',
+          headers:{
+              'Content-type':'application/json'
+          },
+          body:JSON.stringify(wishListObj)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+          console.log(data)
+          if(data.insertedId){
+            swal("Blog added your WishList");
+        }
+      })
+      }
     return (
         <div>
         <h2 className="text-4xl text-center font-bold lg:py-20">Our Recent Blog</h2>
@@ -49,7 +57,7 @@ const BlogSecton = () => {
     <h2 className="text-2xl py-2 font-medium">Category:{recent.category}</h2>
     <div className="card-actions justify-between">
       <Link to={`/blogDetails/${recent._id}`}><button   className="btn btn-primary">Details</button></Link>
-      <button  className="btn btn-primary">WishList</button>
+      <button onClick={handleWishList}   className="btn btn-primary">WishList</button>
     </div>
     
   </div>

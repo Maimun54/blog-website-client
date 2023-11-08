@@ -20,8 +20,8 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/recentBlog')
+            element:<Home></Home>
+            
         },
         {
           path:'/register',

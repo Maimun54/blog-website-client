@@ -1,11 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import Banner from "./Banner";
 import BlogSecton from "./BlogSecton";
 import Newlatter from "./Newlatter";
 
 
 const Home = () => {
-    const recentBlog =useLoaderData();
+   
 
 
     return (
@@ -28,8 +29,23 @@ const Home = () => {
              </div>
          </div>
             </div>
-           
+            
             <Newlatter></Newlatter>
+             <div>
+                <div className="">
+                <h2 className="text-5xl text-center py-5 font-bold">
+                    <span className="text-red-500 ">Helpful Link</span> and Popular Tropics
+                </h2>
+               <h2>Online Safety</h2>
+               <h2>The eSafety Quide</h2>
+               <h2>Spacial Needs Child</h2>
+               <h2>Online Seftey</h2>
+                </div>
+                <div >
+                
+                </div>
+             </div>
+
         </div>
     );
 };

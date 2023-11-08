@@ -35,8 +35,6 @@ const Register = () => {
             swal("Sorry!", "Your password should be at least  special character!", "error")
             return
           }
-
-
         createUser(email,password)
         .then(result=>{
             console.log(result.user)
@@ -44,12 +42,10 @@ const Register = () => {
 
             updateProfile(result.user, {
               displayName: name,
-               photoURL: photo
-               
-               
+               photoURL: photo   
             })
             .then( ()=> {
-              
+              console.log('Profile updated')
             })
             .catch((error) => {
               console.error(error)

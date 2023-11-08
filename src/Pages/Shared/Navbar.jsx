@@ -68,11 +68,13 @@ const Navbar = () => {
   </div>
   
   <div className="navbar-end">
-
-    
-  <label tabIndex={0} className=" ">
-        <div className="w-10 rounded-full">
+        {/* <p>{user?.displayName}</p> */}
          
+       <label tabIndex={0} className=" ">
+       <div >
+        <div className="w-16  rounded-full ">
+         <img src={user?.photoURL} alt="" />
+        </div>
         </div>
       </label>
    
