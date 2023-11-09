@@ -20,7 +20,8 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('http://localhost:5000/recentBlog')
             
         },
         {
@@ -38,12 +39,12 @@ const router = createBrowserRouter([
         {
           path:'/allBlog',
           element:<AllBlog></AllBlog>,
-          loader:({params})=>fetch(`http://localhost:5000/allBlog?category?${params.category}`)
+          loader:({params})=>fetch(`https://blog-website-server-pearl.vercel.app/allBlog?category?${params.category}`)
         },
         {
           path:'/blogDetails/:id',
           element:<BlogDetails></BlogDetails>,
-          loader:({params})=>fetch(`http://localhost:5000/allBlog/${params.id}`)
+          loader:({params})=>fetch(`https://blog-website-server-pearl.vercel.app/allBlog/${params.id}`)
         },
         {
           path:'/featuredBlogs',
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
         {
           path:'/updateBlog/:id',
           element:<PrivateProvider><UpdateBlog></UpdateBlog></PrivateProvider>,
-          loader:({params})=>fetch(`http://localhost:5000/allBlog/${params.id}`)
+          loader:({params})=>fetch(`https://blog-website-server-pearl.vercel.app/allBlog/${params.id}`)
         }
       ]
     },

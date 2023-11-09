@@ -6,7 +6,7 @@ const Newsletter = () => {
     e.preventDefault()
     const email =e.target.email.value 
     console.log(email)
-    fetch('http://localhost:5000/subscribe',{
+    fetch('https://blog-website-server-pearl.vercel.app/subscribe',{
             method:'POST',
             headers:{
                 'Content-type':'application/json'

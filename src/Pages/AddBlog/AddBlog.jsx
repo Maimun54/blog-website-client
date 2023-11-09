@@ -20,7 +20,7 @@ const AddBlog = () => {
 const newBlogs={title,category,image,description,date,long_description}
         console.log(newBlogs)
         //send data server side
-        fetch('http://localhost:5000/allBlog',{
+        fetch('https://blog-website-server-pearl.vercel.app/allBlog',{
             method:'POST',
             headers:{
                 'Content-type':'application/json'

@@ -18,7 +18,7 @@ const UpdateBlog = () => {
         
 const updateBlogs={title,category,image,description,date,long_description}
         console.log(updateBlogs)
-        fetch(`http://localhost:5000/allBlog/${_id}`,{
+        fetch(`https://blog-website-server-pearl.vercel.app/allBlog/${_id}`,{
             method:'PUT',
             headers:{
                 'Content-type':'application/json'

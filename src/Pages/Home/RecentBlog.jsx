@@ -13,7 +13,7 @@ const RecentBlog = ({recent}) => {
     const handleWishList =()=>{
         const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
        
-          fetch('http://localhost:5000/wishlist',{
+          fetch('https://blog-website-server-pearl.vercel.app/wishlist',{
           method:'POST',
           headers:{
               'Content-type':'application/json'
@@ -31,7 +31,7 @@ const RecentBlog = ({recent}) => {
     return (
         <div>
              <div className="card h-[500px] card-compact  bg-base-100 shadow-xl">
-  <figure><img className=" h-[400px]" src={recent.image} alt="Shoes" /></figure>
+  <figure><img className="w-[300px] h-[400px]" src={recent.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{recent.title}</h2>
     <p className="text-sm" >{recent.description}</p>

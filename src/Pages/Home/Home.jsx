@@ -1,13 +1,15 @@
 
-import { Link } from "react-router-dom";
+
 import Banner from "./Banner";
-import BlogSecton from "./BlogSection";
+
 import Newsletter from "./Newsletter";
 import BlogSection from "./BlogSection";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const Home = () => {
-   
+
+   const awareness =useLoaderData();
 
 
     return (
@@ -38,15 +40,31 @@ const Home = () => {
                 <h2 className="text-5xl text-center py-5 font-bold">
                     <span className="text-red-500 ">Helpful Link</span> and Popular Tropics
                 </h2>
-               <h2>Online Safety</h2>
+                {/* <div className="grid grid-cols-3">
+                <h2>Online Safety</h2>
                <h2>The eSafety Quide</h2>
                <h2>Spacial Needs Child</h2>
                <h2>Online Seftey</h2>
+                </div> */}
                 </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 lg:py-5">
+                {
+                 awareness.map(item=><div key={item._id}>
+
+    <Link ><div  className=" card card-compact  m-5 bg-base-100 shadow-xl">
+      <figure><img className="w-[500px] h-[300px]" src={item.image} alt="brad car" /></figure>
+       <div className="card-body">
+       <h2 className="card-title text-center">{item.title}</h2>
+      </div>
+      </div></Link>
+                 </div>)
+                }
+               </div>
                 <div >
                 
                 </div>
              </div>
+
 
         </div>
     );

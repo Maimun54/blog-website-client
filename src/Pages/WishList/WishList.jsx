@@ -8,7 +8,7 @@ const WishList = () => {
     const {user}=useContext(AuthContext)
     const [wishListBlog,setWishListBlog]=useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:5000/wishlist?email=${user?.email}`)
+        axios.get(`https://blog-website-server-pearl.vercel.app/wishlist?email=${user?.email}`)
         .then(res=>{
             setWishListBlog(res.data)
         })
@@ -16,7 +16,7 @@ const WishList = () => {
 
     const handleRemove = _id=>{
    
-        fetch(`http://localhost:5000/wishlist/${_id}`,{
+        fetch(`https://blog-website-server-pearl.vercel.app/wishlist/${_id}`,{
             method:'DELETE',
             headers:{
                 'content-type':'application/json'

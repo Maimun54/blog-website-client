@@ -19,7 +19,7 @@ const Blog = ({blog}) => {
     const handleWishList =()=>{
       const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
       
-        fetch('http://localhost:5000/wishlist',{
+        fetch('https://blog-website-server-pearl.vercel.app/wishlist',{
         method:'POST',
         headers:{
             'Content-type':'application/json'

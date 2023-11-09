@@ -7,12 +7,9 @@ const BlogSection = () => {
   
     const [recentBlog,setRecentBlog]=useState([])
   
-      console.log(recentBlog)
-    useEffect(()=>{
-          //  fetch('http://localhost:5000/allBlog')
-          //  .then(res=>res.json())
-          //  .then(data=>setRecentBlog(data))
-        axios.get('http://localhost:5000/allBlog')
+      // console.log(recentBlog)
+    useEffect(()=>{  
+        axios.get('https://blog-website-server-pearl.vercel.app/allBlog')
         .then(res=>{
           setRecentBlog(res.data)
         })
