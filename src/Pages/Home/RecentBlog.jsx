@@ -35,7 +35,7 @@ const RecentBlog = ({recent}) => {
   <div className="card-body">
     <h2 className="card-title">{recent.title}</h2>
     <p className="text-sm" >{recent.description}</p>
-    <h2 className="text-2xl py-2 font-medium">Category:{recent.category}</h2>
+    <h2 className="text-xl py-5   font-medium">Category:{recent.category}</h2>
     <div className="card-actions justify-between">
       <Link to={`/blogDetails/${recent._id}`}><button   className="btn btn-primary">Details</button></Link>
       <button onClick={handleWishList}   className="btn btn-primary">WishList</button>

@@ -3,7 +3,7 @@ import {  useEffect, useState } from "react";
 
 import 'react-photo-view/dist/react-photo-view.css';
 import RecentBlog from "./RecentBlog";
-const BlogSecton = () => {
+const BlogSection = () => {
   
     const [recentBlog,setRecentBlog]=useState([])
   
@@ -24,7 +24,7 @@ const BlogSecton = () => {
       
     return (
         <div>
-        <h2 className="text-4xl text-center font-bold lg:py-20">Our Recent Blog</h2>
+        <h2 className="text-4xl text-center font-bold py-20">Our Recent Blog</h2>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10 ">
          {
             recentBlog.slice(-6).map(recent=><RecentBlog key={recent._id} recent={recent}></RecentBlog>
@@ -37,4 +37,4 @@ const BlogSecton = () => {
     );
 };
 
-export default BlogSecton;
+export default BlogSection;

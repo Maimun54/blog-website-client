@@ -1,8 +1,9 @@
 
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
-import BlogSecton from "./BlogSecton";
-import Newlatter from "./Newlatter";
+import BlogSecton from "./BlogSection";
+import Newsletter from "./Newsletter";
+import BlogSection from "./BlogSection";
 
 
 const Home = () => {
@@ -12,25 +13,26 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <BlogSecton></BlogSecton>
+            
+            <BlogSection></BlogSection>
             
 
-    <div className="lg:flex lg:px-20 lg:py-20">
-        <div className="w-1/2">
-        <h2 className="lg:text-3xl font-bold text-center tracking-wide	 mt-16">Watch the video and learn how to protect <br /> your family from everyday hazards!</h2>
+    <div className="xl:flex xl:px-20 lg:pr-20 py-20">
+        <div className="xl:w-1/2 ">
+        <h2 className="lg:text-3xl md:text-3xl text-2xl font-bold text-center tracking-wide	 mt-16">Watch the video and learn how to protect <br /> your family from everyday hazards!</h2>
         <p className="text-2xl text-center mt-5 leading-normal p-5">
          In this informative video, discover essential strategies and practical tips to ensure your child's safety in a world filled with everyday hazards. We'll guide you through key insights, precautions, and preventive measures that every parent should know to create a secure environment for their little ones.
                     </p>
                     </div>
-             <div className="w-1/2">
-             <img className="relative" src="https://i.ibb.co/SdsJ1Ws/serv6.jpg" alt="" />
+             <div className="xl:w-1/2  lg:pr-10">
+             <img className="relative lg:w-full  md:ml-20 md:w-[600px]" src="https://i.ibb.co/SdsJ1Ws/serv6.jpg" alt="" />
              <div className="lg:pl-52" >
-             <img className="lg:w-24 lg:-mt-60 lg:-mr-20 absolute pl-10" src="https://i.ibb.co/2vbJQdY/player.png" alt="" />
+             <img className="w-24  md:ml-64 md:-mt-52 xl:-mt-60  lg:-mt-72 -mt-40 ml-40 xl:ml-20 lg:ml-40 absolute pl-10" src="https://i.ibb.co/2vbJQdY/player.png" alt="" />
              </div>
          </div>
             </div>
             
-            <Newlatter></Newlatter>
+            <Newsletter></Newsletter>
              <div>
                 <div className="">
                 <h2 className="text-5xl text-center py-5 font-bold">
