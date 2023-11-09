@@ -34,8 +34,8 @@ const Newsletter = () => {
     <p className="md:py-5">Stay informed and connected. Subscribe to our newsletter for the latest updates, tips, <br /> and exclusive content delivered directly to your inbox. Join our community today!</p>
      <div>
      <form onSubmit={handleEmailSubmit}>
-     <input name="email"  type="text" placeholder="Type here" className="input input-bordered  md:py-3 input-accent w-full max-w-xs" />
-        <button className="btn btn-primary text-white px-5">Subscribe</button>
+     <input name="email"  type="text" placeholder="Type here" className="input input-bordered py-5 md:py-3 input-accent w-full max-w-xs" />
+        <button className="btn btn-primary text-white px-5 lg:py-0 md:py-0 py-2">Subscribe</button>
      </form>
      </div>
     </div>
