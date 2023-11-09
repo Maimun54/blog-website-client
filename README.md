@@ -1,8 +1,10 @@
-# React + Vite
+<h2>Website Live Link :https://child-blog-cfc06.web.app</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>Top 5  Awesome features this website</h2>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    
+<li>Easy to added your blog</li>
+<li>Easily user can update his blog post </li>
+<li>Visitor can be added wishlist his favorite blog</li>
+<li>Visitor subscribe to blog for future update</li>
+<li>A to Z guide for child</li>

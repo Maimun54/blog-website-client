@@ -37,15 +37,10 @@ const Home = () => {
             <Newsletter></Newsletter>
              <div>
                 <div className="">
-                <h2 className="text-5xl text-center py-5 font-bold">
+                <h2 className="text-5xl text-center py-10 font-bold">
                     <span className="text-red-500 ">Helpful Link</span> and Popular Tropics
                 </h2>
-                {/* <div className="grid grid-cols-3">
-                <h2>Online Safety</h2>
-               <h2>The eSafety Quide</h2>
-               <h2>Spacial Needs Child</h2>
-               <h2>Online Seftey</h2>
-                </div> */}
+                
                 </div>
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 lg:py-5">
                 {
