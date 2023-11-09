@@ -14,11 +14,11 @@ const Blog = ({blog}) => {
   const {user}=useContext(AuthContext)
   const email=user?.email;
   const {title,_id,category,image,description,date,long_description}=blog
-  // const wishList ={blog,email}
+  
   console.log(email)
     const handleWishList =()=>{
       const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
-      // const email =user?.email
+      
         fetch('http://localhost:5000/wishlist',{
         method:'POST',
         headers:{

@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 
 
-const RecentBlog = ({recentBlog}) => {
+const RecentBlog = ({recent}) => {
     const {user}=useContext(AuthContext)
     const email=user?.email;
-    const {title,category,image,description,date,long_description,_id}=recentBlog
+    const {title,category,image,description,date,long_description,_id}=recent
 
     const handleWishList =()=>{
         const wishListObj ={email,title,category,image,description,date,long_description,blogId:_id}
