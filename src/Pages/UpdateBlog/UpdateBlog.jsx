@@ -4,7 +4,7 @@ import swal from "sweetalert";
 
 const UpdateBlog = () => {
     const updateData =useLoaderData();
-    const {_id,title,category,image,description,date,long_description}=updateData
+    const {_id,title,category,image,description,date,long_description}=updateData;
     console.log(updateData)
     const handleBlogUpdate =e=>{
         e.preventDefault();
@@ -40,9 +40,7 @@ const updateBlogs={title,category,image,description,date,long_description}
                 <h2 className="text-4xl font-bold py-3">Update Your Blog</h2>
                 
             </div>
-            <form  onSubmit={handleBlogUpdate}  className=" mx-auto md:w-3/4 lg:w-2/5">
-
-  
+   <form  onSubmit={handleBlogUpdate}  className=" mx-auto md:w-3/4 lg:w-2/5">
   <div className="form-control ">
   <label className="label">
     <span className="label-text">Title</span>
