@@ -11,6 +11,7 @@ import BlogDetails from "../Pages/AllBlog/BlogDetails";
 import PrivateProvider from "../Provider/PrivateProvider";
 import UpdateBlog from "../Pages/UpdateBlog/UpdateBlog";
 import Errorpage from "../Pages/Error/Errorpage";
+import EducationalActivity from "../Pages/Educational Activity/EducationalActivity";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         {
           path:'/featuredBlogs',
           element:<FeatureBlog></FeatureBlog>
+        },
+        {
+          path:'/EducationalActivity',
+          element:<EducationalActivity></EducationalActivity>
         },
         {
           path:'/wishlist',

@@ -5,6 +5,7 @@ import Banner from "./Banner";
 import Newsletter from "./Newsletter";
 import BlogSection from "./BlogSection";
 import { Link, useLoaderData } from "react-router-dom";
+import Contact from "../Contact/Contact";
 
 
 const Home = () => {
@@ -59,6 +60,7 @@ const Home = () => {
                 
                 </div>
              </div>
+             <Contact></Contact>
 
 
         </div>
